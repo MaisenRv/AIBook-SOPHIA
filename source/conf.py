@@ -1,5 +1,5 @@
 project = 'AIBook-SOPHIA'
-copyright = '2026, Santiago'
+copyright = '2026, Santiago, . Licenciado bajo CC BY-NC 4.0'
 author = 'Santiago'
 release = '0.1'
 

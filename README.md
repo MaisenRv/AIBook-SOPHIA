@@ -87,3 +87,7 @@ The `run.bat` script activates the venv and starts `sphinx-autobuild source buil
 - `Makefile` - Minimal Makefile for Sphinx builds
 - `make.bat` - Windows equivalent of Makefile
 - `requirements.txt` - Python dependencies
+
+## Licencia
+
+Este proyecto y el contenido del libro están bajo la licencia [Creative Commons Attribution-NonCommercial 4.0 International](LICENSE).
