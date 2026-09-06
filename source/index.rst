@@ -16,8 +16,4 @@ Inteligencia Artificial: Fundamentos, Modelos y Práctica para el Mundo Real
 
 ----
 
-Prefacio
---------
-Bienvenido a esta publicación...
-
 .. include:: licencia.rst
