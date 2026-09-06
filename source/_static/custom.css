@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700&display=swap');
+
+body, article, .content {
+    font-family: 'Lora', Georgia, serif !important;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    letter-spacing: -0.02em;
+}
+
+.main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+

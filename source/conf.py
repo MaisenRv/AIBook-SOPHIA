@@ -1,6 +1,19 @@
+
+def make_authors():
+    authors = [
+        'David Santiago Mancera Robles'
+    ]
+    result = ''
+    for i in range(len(authors)):
+        result += authors[i]
+        if i < len(authors) - 1:
+            result += ', '
+    return result
+        
+
 project = 'AIBook-SOPHIA'
-copyright = '2026, Santiago, . Licenciado bajo CC BY-NC 4.0'
-author = 'Santiago'
+copyright = f'2026, {make_authors()}. Licenciado bajo CC BY-NC 4.0'
+author = make_authors()
 release = '0.1'
 
 # -- General configuration ---------------------------------------------------
@@ -14,5 +27,14 @@ language = 'es'
 
 # -- Options for HTML output -------------------------------------------------
 
-html_theme = 'furo'
+html_theme = 'sphinx_book_theme'
+html_theme_options = {
+    "navbar_persistent": [],
+}
+
+html_title = "AIBook - SOPHIA"
 html_static_path = ['_static']
+html_css_files = [
+    'custom.css',
+]
+
