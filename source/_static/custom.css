@@ -16,3 +16,22 @@ h1, h2, h3, h4 {
     margin: 0 auto;
 }
 
+/* Centrar gráficos TikZ e imágenes en las páginas */
+.tikz figure, .tikz img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+/* Espaciado para fórmulas matemáticas */
+.math {
+    overflow-x: auto;
+    padding: 0.5em 0;
+}
+
+html[data-theme="dark"] .bd-content img {
+    background-color: transparent !important;
+    filter: none !important;
+}
+
