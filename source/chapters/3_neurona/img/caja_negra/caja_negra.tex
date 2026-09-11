@@ -1,16 +1,50 @@
-\begin{tikzpicture}[scale=1.1, >=stealth]
+\begin{tikzpicture}[scale=3, transform shape, >=stealth]
+
   \tikzset{
-    nodo entrada/.style={circle, draw=AICyan, fill=AICyan!10, thick, inner sep=3pt},
-    nodo neurona/.style={rectangle, rounded corners, draw=AIBlue, fill=AIBlue!10, thick},
-    nodo activacion/.style={circle, draw=AIGreen, fill=AIGreen!10, thick, inner sep=3pt}
+    nodo entrada/.style={
+      circle,
+      draw=colorPrimario,
+      fill=colorPrimario!10,
+      thick,
+      inner sep=3pt
+    },
+    nodo neurona/.style={
+      rectangle,
+      rounded corners,
+      draw=colorEjes,
+      fill=colorPrimario!10,
+      thick
+    },
+    nodo activacion/.style={
+      circle,
+      draw=colorSalida,
+      fill=colorPrimario!10,
+      thick,
+      inner sep=3pt
+    }
   }
 
-  % Nodos del diagrama
-  \node (x) [nodo entrada] at (0,0) {$\vec{x}$};
-  \node (f) [nodo neurona, minimum size=18mm, align=center] at (3,0) {Caja Negra\\$f(\vec{x})$};
-  \node (y) [nodo activacion] at (6,0) {$y$};
+  % Nodos
+  \node (x) [nodo entrada] at (0.8,1) {$\vec{x}$};
 
-  % Flechas de flujo
-  \draw[->, ultra thick, color=AICyan] (x) -- (f) node[midway, above] {Entrada};
-  \draw[->, ultra thick, color=AIGreen] (f) -- (y) node[midway, above] {Predicción};
+  \node (f) [
+    nodo neurona,
+    minimum size=18mm,
+    align=center
+  ] at (3.5,1) {Caja Negra};
+
+  \node (y) [nodo activacion] at (6.2,1) {$y$};
+
+  % Conexiones
+  \draw[->, ultra thick, color=colorEntrada]
+    (x) -- (f)
+    node[midway, above] {Entrada};
+
+  \draw[->, ultra thick, color=colorSalida]
+    (f) -- (y)
+    node[midway, above] {Predicción};
+
+  % Lienzo
+  \path[use as bounding box] (0,0) rectangle (7,2);
+
 \end{tikzpicture}

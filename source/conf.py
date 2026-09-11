@@ -41,22 +41,69 @@ language = 'es'
 # Formato de salida para los gráficos TikZ (svg es ultra nítido en web)
 tikz_tikzgraph_format = 'svg'
 tikz_transparent = True
+tikz_additional_files = [
+    'chapters/3_neurona/img/caja_negra/caja_negra.tex',
+]
 
 # Preámbulo de TikZ con la paleta "Deep Tech" y estilos centralizados
 tikz_latex_preamble = r"""
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{pagecolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
 
 % Desactiva el fondo del lienzo en LaTeX
 \nopagecolor
 
-% Paleta de Colores "Deep Tech"
-\definecolor{AIBlue}{HTML}{1E3A8A}    % Azul marino: Fronteras z = 0, vectores w
-\definecolor{AICyan}{HTML}{06B6D4}    % Cían: Entradas x, activaciones
-\definecolor{AIRed}{HTML}{E11D48}     % Rojo: Clase 0 / z < 0
-\definecolor{AIGreen}{HTML}{10B981}   % Verde: Clase 1 / z > 0
-\definecolor{AIGray}{HTML}{64748B}    % Gris: Ejes y grillas
+% ==============================================================================
+% PALETA MODO CLARO (LIGHT THEME)
+% ==============================================================================
+\definecolor{GrisPizarraClaro}{HTML}{E9ECEF} % Fondo mate general
+\definecolor{BlancoSuperficie}{HTML}{F8FAFC} % Fondo de nodos / tarjetas
+\definecolor{GrisCarbon}{HTML}{1E293B}        % Texto principal
+\definecolor{GrisMedio}{HTML}{475569}        % Texto secundario / leyendas
+\definecolor{Violeta}{HTML}{7C3AED}          % Elementos primarios / CTA
+\definecolor{CyanProfundo}{HTML}{0891B2}     % Entradas / Acento 1
+\definecolor{RosaCoral}{HTML}{E05670}        % Salidas / Errores / Acento 2
+\definecolor{GrisBorde}{HTML}{CBD5E1}        % Ejes cartesianos y bordes
+
+% ==============================================================================
+% PALETA MODO OSCURO (DARK THEME)
+% ==============================================================================
+\definecolor{GrisPizarraOscuro}{HTML}{2C2C2C}% Fondo oscuro general
+\definecolor{GrisSuperficieOscuro}{HTML}{383838}% Fondo de nodos / tarjetas
+\definecolor{GrisClaro}{HTML}{E4E4E4}        % Texto principal
+\definecolor{GrisNeutroMuted}{HTML}{A3A3A3}   % Texto secundario / leyendas
+\definecolor{Lavanda}{HTML}{B39CD0}          % Elementos primarios / CTA
+\definecolor{CyanClaro}{HTML}{A8DADC}        % Entradas / Acento 1
+\definecolor{RosaSuave}{HTML}{FFC1CC}        % Salidas / Errores / Acento 2
+\definecolor{GrisBordeOscuro}{HTML}{444444}  % Ejes cartesianos y bordes
+
+% ==============================================================================
+% COMANDOS PARA CAMBIAR TODAS LAS VARIABLES GLOBALES DE GOLPE
+% ==============================================================================
+\newcommand{\activarPaletaOscura}{%
+  \colorlet{colorFondo}{black}%
+  \colorlet{colorSuperficie}{black}%
+  \colorlet{colorTexto}{white}%
+  \colorlet{colorTextoMuted}{white}%
+  \colorlet{colorPrimario}{red}%
+  \colorlet{colorEntrada}{yellow}%
+  \colorlet{colorSalida}{magenta}%
+  \colorlet{colorEjes}{white}%
+}
+\newcommand{\activarPaletaClara}{%
+  \colorlet{colorFondo}{white}%
+  \colorlet{colorSuperficie}{white}%
+  \colorlet{colorTexto}{black}%
+  \colorlet{colorTextoMuted}{black}%
+  \colorlet{colorPrimario}{blue}%
+  \colorlet{colorEntrada}{cyan}%
+  \colorlet{colorSalida}{green}%
+  \colorlet{colorEjes}{black}%
+}
 
 """
 
@@ -73,10 +120,17 @@ tikz_latex_preamble = r"""
 
 # -- Options for HTML output -------------------------------------------------
 
+pygments_style = 'sphinx'
+pygments_dark_style = 'sphinx'
+
 html_theme = 'sphinx_book_theme'
 html_theme_options = {
     "navbar_persistent": [],
 }
+html_context = {
+    "default_mode": "light"
+}
+
 
 html_title = "AIBook - SOPHIA"
 html_static_path = ['_static']
