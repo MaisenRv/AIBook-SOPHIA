@@ -1,31 +1,17 @@
 \begin{tikzpicture}[scale=3, transform shape, >=stealth]
 
   \tikzset{
-    nodo entrada/.style={
-      circle,
-      draw=colorPrimario,
-      fill=colorPrimario!10,
-      thick,
-      inner sep=3pt
-    },
     nodo neurona/.style={
       rectangle,
       rounded corners,
       draw=colorEjes,
-      fill=colorPrimario!10,
-      thick
-    },
-    nodo activacion/.style={
-      circle,
-      draw=colorSalida,
-      fill=colorPrimario!10,
-      thick,
-      inner sep=3pt
+      color=colorTexto,
+      very thick
     }
   }
 
   % Nodos
-  \node (x) [nodo entrada] at (0.8,1) {$\vec{x}$};
+  \draw node (x) [color=colorTexto] at (0.8,1) {Entrada};
 
   \node (f) [
     nodo neurona,
@@ -33,16 +19,11 @@
     align=center
   ] at (3.5,1) {Caja Negra};
 
-  \node (y) [nodo activacion] at (6.2,1) {$y$};
+  \draw node (y) [color=colorTexto] at (6.2,1) {Salida};
 
   % Conexiones
-  \draw[->, ultra thick, color=colorEntrada]
-    (x) -- (f)
-    node[midway, above] {Entrada};
-
-  \draw[->, ultra thick, color=colorSalida]
-    (f) -- (y)
-    node[midway, above] {Predicción};
+  \draw[-{Latex[length=4mm, width=6mm]}, line width=2.5pt, color=colorTexto] (x) -- (f);
+  \draw[-{Latex[length=4mm, width=6mm]}, line width=2.5pt, color=colorTexto] (f) -- (y);
 
   % Lienzo
   \path[use as bounding box] (0,0) rectangle (7,2);
