@@ -1,11 +1,8 @@
 :hide-toc:
 
-
 ===========================================================================
 Inteligencia Artificial: Fundamentos, Modelos y Práctica para el Mundo Real 
 ===========================================================================
-
-----
 
 .. toctree::
    :maxdepth: 2

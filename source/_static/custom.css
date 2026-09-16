@@ -18,7 +18,6 @@
 /* Espaciado para fórmulas matemáticas */
 .math {
     overflow-x: auto;
-    padding: 0.5em 0;
 }
 
 body, article, .content, .bd-content {

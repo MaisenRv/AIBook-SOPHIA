@@ -4,6 +4,7 @@ def make_authors():
         'David Santiago Mancera Robles',
         'Leidi Johana Garzon Velasquez',
         'Yomar Andrés Romero Polo', 
+        'Geferson Giobany Aparicio Higuera'
     ]
     result = ''
     for i in range(len(authors)):
@@ -43,6 +44,7 @@ tikz_tikzgraph_format = 'svg'
 tikz_transparent = True
 tikz_additional_files = [
     'chapters/3_neurona/img/caja_negra/caja_negra.tex',
+    'chapters/3_neurona/img/caja_negra_definida/caja_negra_definida.tex',
 ]
 
 # Preámbulo de TikZ con la paleta "Deep Tech" y estilos centralizados
