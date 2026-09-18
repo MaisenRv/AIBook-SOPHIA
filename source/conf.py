@@ -43,8 +43,10 @@ language = 'es'
 tikz_tikzgraph_format = 'svg'
 tikz_transparent = True
 tikz_additional_files = [
+    # --------------- CAPITULO 3 ------------
     'chapters/3_neurona/img/caja_negra/caja_negra.tex',
     'chapters/3_neurona/img/caja_negra_definida/caja_negra_definida.tex',
+    'chapters/3_neurona/img/caja_con_capas/caja_con_capas.tex',
 ]
 
 # Preámbulo de TikZ con la paleta "Deep Tech" y estilos centralizados
